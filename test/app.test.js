@@ -22,7 +22,7 @@ describe('app routes', () => {
 it('can signup a new user', () => {
   return request(app)
     .post('/api/v1/auth/signup')
-    .post({ username: 'test', password: 'password1234' })
+    .send({ username: 'test', password: 'password1234' })
     .then(res => {
       expect(res.body).toEqual({
         _id: expect.any(String),
